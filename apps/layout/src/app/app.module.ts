@@ -3,19 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { AuthModule } from '@duncanhunter/auth';
-
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ShardModule } from '@duncanhunter/shard';
+import { appRoutes } from './app.routes';
+import { LayoutComponent } from './containers/layout/layout.component';
+import { MaterialModule } from '@duncanhunter/material';
+
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent, NxWelcomeComponent, LayoutComponent],
   imports: [
     BrowserModule,
-    AuthModule,
-    RouterModule,
-    BrowserAnimationsModule,
-    ShardModule,
+    MaterialModule,
+    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],
   bootstrap: [AppComponent],

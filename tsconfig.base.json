@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@duncanhunter/auth": ["libs/auth/src/index.ts"],
+      "@duncanhunter/data-models": ["libs/data-models/src/index.ts"],
+      "@duncanhunter/material": ["libs/material/src/index.ts"],
+      "@duncanhunter/shard": ["libs/shard/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
