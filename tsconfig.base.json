@@ -17,7 +17,9 @@
     "paths": {
       "@duncanhunter/auth": ["libs/auth/src/index.ts"],
       "@duncanhunter/data-models": ["libs/data-models/src/index.ts"],
+      "@duncanhunter/layout-l": ["libs/layout-l/src/index.ts"],
       "@duncanhunter/material": ["libs/material/src/index.ts"],
+      "@duncanhunter/products": ["libs/products/src/index.ts"],
       "@duncanhunter/shard": ["libs/shard/src/index.ts"]
     }
   },

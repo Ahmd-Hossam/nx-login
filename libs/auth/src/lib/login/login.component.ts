@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.form.value).subscribe(
       (res) => {
         console.log('respons is ', res);
+        this.toastr.success('logged in successfully!');
       },
       (err) => {
         this.toastr.error(`${err.message}`.split(':')[3]);
