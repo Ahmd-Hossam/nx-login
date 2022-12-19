@@ -1,7 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { finalize } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'duncanhunter-login',
@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -33,8 +34,9 @@ export class LoginComponent implements OnInit {
     this.submit.emit(this.form.value);
     this.authService.login(this.form.value).subscribe(
       (res) => {
-        console.log('respons is ', res);
         this.toastr.success('logged in successfully!');
+        this.router.navigate(['/products']);
+        this.form.reset();
       },
       (err) => {
         this.toastr.error(`${err.message}`.split(':')[3]);

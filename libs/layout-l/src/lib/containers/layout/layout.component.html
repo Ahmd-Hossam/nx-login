@@ -10,7 +10,9 @@
       >
         Products
       </button>
-      <button mat-button>Logout</button>
+      <button mat-button [routerLink]="['/auth/login']" (click)="logout()">
+        Logout
+      </button>
     </span>
     <span>
       <span
